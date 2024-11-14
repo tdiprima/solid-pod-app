@@ -1,0 +1,17 @@
+{
+  "name": "solid-pod-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@inrupt/solid-client": "^2.1.2",
+    "@inrupt/solid-client-authn-browser": "^2.3.0",
+    "@inrupt/vocab-common-rdf": "^1.0.5",
+    "vite": "^5.4.10"
+  }
+}

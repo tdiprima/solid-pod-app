@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete File from Solid POD</title>
+    <!-- Doesn't work -->
+</head>
+<body>
+    <h1>Delete File from Solid POD</h1>
+
+    <!-- File Delete Section -->
+    <section>
+        <h2>Delete a File</h2>
+        <form id="deleteForm">
+            <label for="fileUrl">Enter the File URL:</label>
+            <input type="url" id="fileUrl" required>
+            <button type="submit">Delete File</button>
+        </form>
+        <p id="deleteStatus"></p>
+    </section>
+
+    <script type="module" src="delete.js"></script>
+</body>
+</html>

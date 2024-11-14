@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid POD File Upload</title>
+    <!-- npm run dev -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Solid POD Interface</h1>
+    
+    <!-- Login Section -->
+    <section>
+        <h2>Login</h2>
+        <p id="solid_identity_provider"></p>
+        <button id="btnLogin">Log In</button>
+        <p id="labelStatus">Not logged in</p>
+    </section>
+
+    <!-- Profile Write Section -->
+    <section>
+        <h2>Write to Profile</h2>
+        <form id="writeForm">
+            <label for="input_name">Enter Name:</label>
+            <input type="text" id="input_name" required>
+            <button type="submit">Write Name</button>
+        </form>
+        <p id="labelWriteStatus"></p>
+        <p id="labelFN"></p>
+    </section>
+
+    <!-- Profile Read Section -->
+    <section>
+        <h2>Read Profile</h2>
+        <form id="readForm">
+            <label for="webID">Enter WebID:</label>
+            <input type="text" id="webID" value="...not logged in yet - but enter any WebID to read from its profile..." required>
+            <button type="submit">Read Profile</button>
+        </form>
+        <p id="labelFN"></p>
+    </section>
+
+    <!-- File Upload Section -->
+    <section>
+        <h2>Upload File</h2>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" required>
+            <button type="submit">Upload File</button>
+        </form>
+        <p id="labelUploadStatus"></p>
+    </section>
+
+    <script type="module" src="upload-web.js"></script>
+</body>
+</html>
