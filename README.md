@@ -4,15 +4,15 @@ This project provides a simple interface for interacting with a Solid POD using 
 
 1. **Read Profile Information**: View profile data from a Solid POD WebID.
 2. **Write to Profile**: Update profile information (e.g., name) in the Solid POD.
-3. **Upload Files**: Upload files to a specified container within the POD, creating the container if it doesn’t exist.
+3. **Upload Files**: Upload files to a specified container within the POD, creating the container if it doesn't exist.
 
 ## Setup and Installation
 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/solid-pod-interaction.git
-   cd solid-pod-interaction
+   git clone https://github.com/tdiprima/solid-pod-app.git
+   cd solid-pod-app
    ```
 
 2. **Install dependencies**:
@@ -41,7 +41,7 @@ This project provides a simple interface for interacting with a Solid POD using 
 3. **Authenticate**: Log in with your Solid POD credentials.
 4. **Read Profile**: Enter a WebID to fetch profile information.
 5. **Write Profile**: Update profile details (e.g., name).
-6. **Upload Files**: Select a file to upload to your POD’s `/public` container.
+6. **Upload Files**: Select a file to upload to your POD's `/public` container.
 
 ## Requirements
 
@@ -57,3 +57,5 @@ This project provides a simple interface for interacting with a Solid POD using 
 ## License
 
 This project is open-source and available under the MIT License.
+
+<br>
