@@ -1,4 +1,11 @@
-// https://forum.solidproject.org/t/upload-a-file-on-a-solid-pot-and-connecting-to-my-pod/6491/5
+/**
+ * @file upload-local.js
+ * @description Upload a file to a Solid POD
+ * @requires @inrupt/solid-client
+ * @requires @inrupt/solid-client-authn-browser
+ * @requires @inrupt/vocab-common-rdf
+ * @note This file is a modified version of the original upload-web.js
+ */
 import {
     getSolidDataset,
     getThing,
@@ -6,8 +13,6 @@ import {
     getStringNoLocale,
     setStringNoLocale,
     saveSolidDatasetAt, 
-    overwriteFile,
-    getSourceUrl,
     createContainerAt,
     saveFileInContainer
 } from "@inrupt/solid-client";
@@ -15,10 +20,8 @@ import { Session } from "@inrupt/solid-client-authn-browser";
 import { VCARD } from "@inrupt/vocab-common-rdf";
 
 // TODO: Change this to your identity provider.
-// const SOLID_IDENTITY_PROVIDER = "https://solidcommunity.net";
-// const MY_POD = "https://tdiprima.solidcommunity.net/public";
 const SOLID_IDENTITY_PROVIDER = "http://localhost:3000";
-const MY_POD = "http://localhost:3000/Tammy-DiPrima/public";
+const MY_POD = "http://localhost:3000/Tammy-DiPrima/";
 
 document.getElementById(
     "solid_identity_provider"
@@ -137,7 +140,6 @@ async function readProfile() {
 
     const profileDocumentUrl = new URL(webID);
     profileDocumentUrl.hash = "";
-
    
     // Profile is public data; i.e., you do not need to be logged in to read the data.
     // For illustrative purposes, shows both an authenticated and non-authenticated reads.
@@ -169,17 +171,18 @@ async function readProfile() {
     event.preventDefault();
     const fileInput = document.getElementById("fileInput");
     const file = fileInput.files[0];
-    const containerUrl = `${MY_POD}/public/`;
+    // TODO: folder name
+    const containerUrl = `${MY_POD}public/`;
 
     try {
-        // Step 1a: Ensure the public container exists
+        // Step 1b: Ensure the public container exists
         const headResponse = await session.fetch(containerUrl, { method: "HEAD" });
         if (!headResponse.ok) {
             await createContainerAt(containerUrl, { fetch: session.fetch });
             console.log("Created missing public container.");
         }
 
-        // Step 2a: Upload the file
+        // Step 2b: Upload the file
         const fileResponse = await saveFileInContainer(containerUrl, file, {
             contentType: "text/turtle",
             fetch: session.fetch,

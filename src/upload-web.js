@@ -16,8 +16,6 @@ import { VCARD } from "@inrupt/vocab-common-rdf";
 // TODO: Change this to your identity provider.
 const SOLID_IDENTITY_PROVIDER = "https://solidcommunity.net";
 const MY_POD = "https://tdiprima.solidcommunity.net/public";
-// const SOLID_IDENTITY_PROVIDER = "http://localhost:3000";
-// const MY_POD = "http://localhost:3000/Tammy-DiPrima/public";
 
 document.getElementById(
     "solid_identity_provider"
