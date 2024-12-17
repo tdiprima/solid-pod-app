@@ -28,7 +28,9 @@ This project provides a simple interface for interacting with a Solid POD using 
    npm install -g create-vite
    ```
 
-4. **Start the Vite development server**:
+4. Replace all instances of "http://localhost:3000/Tammy-DiPrima/*" with your POD url.
+
+5. **Start the Vite development server**:
 
    ```bash
    npm run dev
